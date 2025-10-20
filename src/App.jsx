@@ -6,15 +6,16 @@ import InvitationContent from './components/InvitationContent'
 import MusicPlayer from './components/MusicPlayer'
 
 function App() {
-  // Recuperar el estado guardado o empezar desde 'hero'
+  // Siempre empezar desde 'hero' en la primera carga de la sesión
   const [currentSection, setCurrentSection] = useState(() => {
-    const saved = localStorage.getItem('invitationSection')
+    // Solo recuperar el estado si es la misma sesión (no una recarga completa)
+    const saved = sessionStorage.getItem('invitationSection')
     return saved || 'hero'
   })
 
-  // Guardar el estado cada vez que cambia
+  // Guardar el estado en sessionStorage (se borra al cerrar la pestaña)
   useEffect(() => {
-    localStorage.setItem('invitationSection', currentSection)
+    sessionStorage.setItem('invitationSection', currentSection)
   }, [currentSection])
 
   return (
