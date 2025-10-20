@@ -15,10 +15,12 @@ const HeroImage = ({ onComplete }) => {
       
       {/* Imagen de fondo optimizada */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/images/hero-image.jpg')`,
-          filter: 'brightness(0.9)'
+          filter: 'brightness(0.9)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
         }}
       />
 

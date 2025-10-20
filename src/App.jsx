@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import HeroImage from './components/HeroImage'
 import EnvelopeOpening from './components/EnvelopeOpening'
@@ -6,10 +6,19 @@ import InvitationContent from './components/InvitationContent'
 import MusicPlayer from './components/MusicPlayer'
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('hero') // 'hero', 'envelope', 'content'
+  // Recuperar el estado guardado o empezar desde 'hero'
+  const [currentSection, setCurrentSection] = useState(() => {
+    const saved = localStorage.getItem('invitationSection')
+    return saved || 'hero'
+  })
+
+  // Guardar el estado cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem('invitationSection', currentSection)
+  }, [currentSection])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 overflow-x-hidden">
       <AnimatePresence mode="wait">
         {currentSection === 'hero' && (
           <HeroImage key="hero" onComplete={() => setCurrentSection('envelope')} />
