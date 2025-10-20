@@ -1,0 +1,910 @@
+import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import Countdown from './Countdown'
+
+const InvitationContent = () => {
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    // Scroll suave al inicio cuando se monta el componente
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0
+    }
+  }, [])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="w-full h-screen overflow-y-auto scroll-smooth"
+      ref={scrollRef}
+      style={{
+        scrollBehavior: 'smooth',
+        scrollSnapType: 'y mandatory'
+      }}
+    >
+      {/* Sección 1: Tarjeta principal con fecha */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        style={{
+          backgroundImage: `url('/images/background-texture.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full max-w-2xl"
+        >
+          <div 
+            className="relative rounded-lg shadow-2xl overflow-hidden bg-white/40 backdrop-blur-sm"
+          >
+            <div className="relative p-12">
+              {/* Sobre decorativo */}
+              <motion.div
+                initial={{ y: -50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mb-8"
+              >
+                <div className="relative mx-auto w-full max-w-md">
+                  <div className="bg-sage p-6 relative" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)' }}>
+                    <div className="text-center py-4">
+                      <div className="text-gold text-4xl font-serif font-bold mb-2">
+                        <span>F</span><span className="text-2xl">H</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Sello */}
+                  <div 
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full z-10"
+                    style={{
+                      background: 'radial-gradient(circle at 30% 30%, #e5c77d 0%, #c9a961 40%, #b8941f 100%)',
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
+                    }}
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg width="40" height="40" viewBox="0 0 50 50" className="opacity-60">
+                        <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5"/>
+                        <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5" transform="rotate(90 25 15)"/>
+                        <rect x="24" y="15" width="2" height="15" fill="#8b7355"/>
+                        <circle cx="25" cy="32" r="3" fill="#8b7355" opacity="0.4"/>
+                        <circle cx="20" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
+                        <circle cx="30" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Contenido */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mt-12"
+              >
+                <p className="text-xs tracking-widest text-gray-500 mb-6 font-light">
+                  DECIDIMOS DECIRNOS QUE SÍ PARA TODA LA VIDA
+                </p>
+                
+                <h1 className="font-serif text-6xl text-gray-700 mb-3">
+                  FÁTIMA
+                </h1>
+                <p className="text-4xl text-gray-500 font-light italic mb-3">&</p>
+                <h1 className="font-serif text-6xl text-gray-700 mb-8">
+                  HÉCTOR
+                </h1>
+                
+                <p className="text-sm tracking-wide text-gray-600 mb-8 leading-relaxed">
+                  TENEMOS EL HONOR DE INVITARLOS A<br />
+                  CELEBRAR NUESTRA UNIÓN EL DÍA
+                </p>
+                
+                <div className="text-gray-600 mb-12">
+                  <p className="text-xs tracking-widest mb-2">ENERO</p>
+                  <p className="text-xs tracking-wider mb-2">SÁBADO</p>
+                  <p className="text-7xl font-light mb-2">24</p>
+                  <p className="text-lg tracking-widest">2026</p>
+                </div>
+              </motion.div>
+
+              {/* Tarjeta RSVP */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative mx-auto w-64 h-64 mt-8"
+              >
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-full shadow-lg flex items-center justify-center"
+                  style={{
+                    clipPath: 'circle(45% at 50% 50%)',
+                    border: '1px solid rgba(0,0,0,0.05)'
+                  }}
+                >
+                  <div className="text-center px-8">
+                    <p className="text-xs tracking-wide text-gray-600 leading-relaxed mb-4">
+                      CON MUCHO<br />
+                      CARIÑO HEMOS<br />
+                      RESERVADO UN<br />
+                      PASE<br />
+                      PARA TI
+                    </p>
+                    <div className="absolute right-8 top-1/2 transform translate-x-4">
+                      <svg width="30" height="60" viewBox="0 0 30 60" className="opacity-40">
+                        <line x1="15" y1="0" x2="15" y2="60" stroke="#8b7355" strokeWidth="1"/>
+                        <circle cx="15" cy="15" r="4" fill="#8b7355" opacity="0.3"/>
+                        <circle cx="15" cy="30" r="5" fill="#8b7355" opacity="0.4"/>
+                        <circle cx="15" cy="45" r="4" fill="#8b7355" opacity="0.3"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Indicador de scroll */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 1 }}
+                viewport={{ once: true }}
+                className="mt-16 text-center text-gray-500 text-sm"
+              >
+                <p className="italic">Desliza hacia abajo</p>
+                <div className="mt-4 animate-bounce">
+                  <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Sección 2: Imagen de la pareja */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        style={{
+          backgroundImage: `url('/images/couple-2.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay para mejor contraste */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          viewport={{ once: true }}
+          className="relative z-10 text-center text-white px-4"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20"
+          >
+            <h2 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-2xl">
+              Nuestra Historia
+            </h2>
+            <p className="text-lg md:text-xl tracking-wide drop-shadow-lg max-w-2xl mx-auto">
+              Un amor que comenzó como una amistad y creció hasta convertirse en algo eterno
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* Indicador de más contenido */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          viewport={{ once: true }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+        >
+          <div className="animate-bounce">
+            <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Sección 3: Detalles de la Recepción */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        style={{
+          backgroundImage: `url('/images/background-texture.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full max-w-4xl"
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Tarjeta izquierda - Notas */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl p-8"
+            >
+              <div className="space-y-6">
+                <div className="text-center pb-4 border-b border-gray-200">
+                  <p className="text-sm tracking-widest text-gray-600 mb-2">ESTACIONAMIENTO</p>
+                  <p className="text-xs text-gray-500">INCLUIDO</p>
+                </div>
+                
+                <div className="text-center pb-4 border-b border-gray-200">
+                  <p className="text-sm tracking-widest text-gray-600 mb-2">EVENTO</p>
+                  <p className="text-xs text-gray-500">SOLO PARA ADULTOS</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tarjeta derecha - Recepción */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-sage text-white rounded-lg shadow-2xl overflow-hidden relative"
+              style={{
+                clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
+                backgroundImage: `
+                  linear-gradient(135deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(225deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(315deg, rgba(0,0,0,0.05) 25%, transparent 25%)
+                `,
+                backgroundSize: '20px 20px',
+                backgroundPosition: '0 0, 10px 0, 10px -10px, 0px 10px'
+              }}
+            >
+              <div className="p-8 pb-16">
+                <h2 className="text-3xl font-serif text-center mb-6 tracking-wider">
+                  RECEPCIÓN
+                </h2>
+
+                {/* Logo de Finca Guadalupe */}
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/images/finca-logo.png" 
+                    alt="Finca Guadalupe Logo" 
+                    className="w-48 h-auto object-contain"
+                    style={{
+                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
+                    }}
+                    onError={(e) => {
+                      console.error('Error cargando logo:', e)
+                      e.target.style.display = 'none'
+                    }}
+                  />
+                </div>
+
+                <h3 className="text-2xl font-serif text-center mb-4 tracking-wide">
+                  FINCA GUADALUPE
+                </h3>
+
+                <p className="text-xs text-center leading-relaxed mb-6 opacity-90">
+                  CD. AYALA, KM. 3 CARRETERA TLAYECAC<br />
+                  XALOSTOC, CARR. TLAYECAC -<br />
+                  HUITZIILILLA, 62723 TLAYECAC, MOR.
+                </p>
+
+                <p className="text-3xl font-light text-center mb-6">
+                  12:30 PM
+                </p>
+
+                <div className="flex justify-center">
+                  <a
+                    href="https://google.com/maps/place/Finca+Guadalupe/@18.7320681,-98.8968436,17z/data=!3m1!4b1!4m6!3m5!1s0x85ce66f13a28d4ef:0x3b05798fcdd4dae6!8m2!3d18.7320681!4d-98.8942687!16s%2Fg%2F1232kf19c?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-white px-8 py-2 rounded text-sm tracking-widest hover:bg-white hover:text-sage transition-all duration-300"
+                  >
+                    VER MAPA
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Tarjeta Dresscode - Abajo centrada */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-8 backdrop-blur-sm rounded-lg shadow-xl p-8 max-w-md mx-auto relative overflow-hidden"
+            style={{
+              background: '#f5f5f0',
+              backgroundImage: `
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255,255,255,0.4) 0%, transparent 30%),
+                radial-gradient(circle at 60% 70%, rgba(0,0,0,0.02) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px),
+                repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px)
+              `,
+              boxShadow: 'inset 0 0 20px rgba(0,0,0,0.05), 0 4px 6px rgba(0,0,0,0.1)'
+            }}
+          >
+            <h3 className="text-xl font-serif text-center mb-4 text-gray-700 tracking-wider">
+              DRESSCODE
+            </h3>
+            <p className="text-center text-gray-600 mb-4 tracking-wide">FORMAL</p>
+            
+            {/* Imagen de dresscode */}
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/images/logo-dresscode.png" 
+                alt="Dresscode Formal" 
+                className="w-32 h-auto object-contain"
+              />
+            </div>
+
+            <p className="text-xs text-center text-gray-500 leading-relaxed">
+              FAVOR DE NO USAR<br />
+              COLOR BLANCO U OLIVA
+            </p>
+          </motion.div>
+
+          {/* Indicador de scroll */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center text-gray-500 text-sm"
+          >
+            <div className="animate-bounce">
+              <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Sección 4: Opciones de Hospedaje */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        style={{
+          backgroundImage: `url('/images/background-texture.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full max-w-5xl"
+        >
+          {/* Imagen de las manos */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-8 rounded-lg overflow-hidden shadow-2xl"
+          >
+            <img 
+              src="/images/manos.jpg" 
+              alt="Manos con anillos" 
+              className="w-full h-64 object-cover object-center"
+              style={{
+                objectPosition: 'center 40%'
+              }}
+            />
+          </motion.div>
+
+          {/* Título con forma de cinta */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-12 relative"
+          >
+            <div 
+              className="bg-sage text-white py-6 px-12 shadow-xl mx-auto max-w-2xl"
+              style={{
+                clipPath: 'polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%)',
+                backgroundImage: `
+                  linear-gradient(135deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(225deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                  linear-gradient(315deg, rgba(0,0,0,0.05) 25%, transparent 25%)
+                `,
+                backgroundSize: '20px 20px',
+                backgroundPosition: '0 0, 10px 0, 10px -10px, 0px 10px'
+              }}
+            >
+              <h2 className="text-3xl md:text-4xl font-serif text-center tracking-wider">
+                OPCIONES DE HOSPEDAJE
+              </h2>
+            </div>
+          </motion.div>
+
+          {/* Tarjetas de hoteles */}
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Hotel 1 - Los Naranjos */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden"
+            >
+              <div className="relative">
+                <div 
+                  className="w-full h-48 overflow-hidden flex items-center justify-center"
+                  style={{
+                    backgroundImage: `url('/images/background-texture.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <img 
+                    src="/images/finca1.jpg" 
+                    alt="Los Naranjos Hotel" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-serif mb-2 text-gray-700">LOS NARANJOS HOTEL</h3>
+                <p className="text-xs text-gray-500 mb-2">1 MIN DE DISTANCIA</p>
+                <p className="text-xs text-gray-600 mb-4">ALIMENTOS INCLUIDOS</p>
+                <a
+                  href="https://google.com/maps/place/Los+Naranjos+Hotel/@18.7332403,-98.8975049,17z/data=!4m9!3m8!1s0x85ce66ec2505c317:0xa8a1e928e75e7079!5m2!4m1!1i2!8m2!3d18.7332403!4d-98.89493!16s%2Fg%2F1hhh1319r?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-sage text-sage px-6 py-2 rounded text-sm tracking-wider hover:bg-sage hover:text-white transition-all duration-300"
+                >
+                  VER MAPA
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Hotel 2 - Finca Guadalupe (Principal) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden"
+            >
+              <div className="relative">
+                <div 
+                  className="w-full h-48 overflow-hidden flex items-center justify-center"
+                  style={{
+                    backgroundImage: `url('/images/background-texture.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <img 
+                    src="/images/finca2.jpg" 
+                    alt="Finca Guadalupe" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-serif mb-2 text-gray-700">FINCA GUADALUPE</h3>
+                <p className="text-xs text-gray-500 mb-2">SEDE PRINCIPAL</p>
+                <p className="text-xs text-gray-600 mb-4">ALIMENTOS INCLUIDOS</p>
+                <a
+                  href="https://google.com/maps/place/Finca+Guadalupe/@18.7320681,-98.8968436,17z/data=!3m1!4b1!4m6!3m5!1s0x85ce66f13a28d4ef:0x3b05798fcdd4dae6!8m2!3d18.7320681!4d-98.8942687!16s%2Fg%2F1232kf19c?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-sage text-sage px-6 py-2 rounded text-sm tracking-wider hover:bg-sage hover:text-white transition-all duration-300"
+                >
+                  VER MAPA
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Hotel 3 - Finca Valeria */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden"
+            >
+              <div className="relative">
+                <div 
+                  className="w-full h-48 overflow-hidden flex items-center justify-center"
+                  style={{
+                    backgroundImage: `url('/images/background-texture.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <img 
+                    src="/images/finca3.jpg" 
+                    alt="Finca Valeria" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-serif mb-2 text-gray-700">FINCA VALERIA</h3>
+                <p className="text-xs text-gray-500 mb-2">1 MIN DE DISTANCIA</p>
+                <p className="text-xs text-gray-600 mb-4">ALIMENTOS INCLUIDOS</p>
+                <a
+                  href="https://www.google.com/maps/place/Finca+Valeria/@18.7320681,-98.8968436,17z/data=!4m14!1m7!3m6!1s0x85ce66f13a28d4ef:0x3b05798fcdd4dae6!2sFinca+Guadalupe!8m2!3d18.7320681!4d-98.8942687!16s%2Fg%2F1232kf19c!3m5!1s0x85ce678b9aed67bf:0x8cded6875f1d78f4!8m2!3d18.7311263!4d-98.8948395!16s%2Fg%2F11fn46z94b?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-sage text-sage px-6 py-2 rounded text-sm tracking-wider hover:bg-sage hover:text-white transition-all duration-300"
+                >
+                  VER MAPA
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Icono de campana */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <img 
+              src="/images/campanilla.png" 
+              alt="Campanilla" 
+              className="w-20 h-auto object-contain"
+            />
+          </motion.div>
+
+          {/* Indicador de scroll */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            viewport={{ once: true }}
+            className="mt-8 text-center text-gray-500 text-sm"
+          >
+            <div className="animate-bounce">
+              <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Sección 4.5: Imagen de la Pedida */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        style={{
+          backgroundImage: `url('/images/pedida.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay para mejor contraste */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          viewport={{ once: true }}
+          className="relative z-10 text-center text-white px-4"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20"
+          >
+            <h2 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-2xl">
+              La Pedida
+            </h2>
+            <p className="text-lg md:text-xl tracking-wide drop-shadow-lg max-w-2xl mx-auto">
+              El momento en que decidimos comenzar esta aventura juntos
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* Indicador de más contenido */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          viewport={{ once: true }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+        >
+          <div className="animate-bounce">
+            <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Sección 5: Mesa de Regalos */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        style={{
+          backgroundImage: `url('/images/background-texture.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full max-w-4xl"
+        >
+          {/* Tarjeta de mensaje */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-12 bg-white/90 backdrop-blur-sm rounded-lg shadow-2xl p-8 md:p-12 max-w-2xl mx-auto"
+            style={{
+              background: '#f5f5f0',
+              backgroundImage: `
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255,255,255,0.4) 0%, transparent 30%),
+                radial-gradient(circle at 60% 70%, rgba(0,0,0,0.02) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px),
+                repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px)
+              `,
+              boxShadow: 'inset 0 0 20px rgba(0,0,0,0.05), 0 4px 6px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Icono de regalos */}
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/images/regalos.png" 
+                alt="Regalos" 
+                className="w-24 h-auto object-contain"
+              />
+            </div>
+
+            <p className="text-center text-gray-600 text-sm md:text-base leading-relaxed">
+              NUESTRO MEJOR REGALO ES<br />
+              DISFRUTAR ESTE DÍA CON USTEDES,<br />
+              PERO SI QUIEREN TENER UN<br />
+              DETALLE CON NOSOTROS<br />
+              AYÚDANOS A ESCOGER EL DESTINO<br />
+              DE NUESTRA LUNA DE MIEL.
+            </p>
+          </motion.div>
+
+          {/* Tarjeta verde con opciones de viaje */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-sage text-white rounded-lg shadow-2xl overflow-hidden relative"
+            style={{
+              backgroundImage: `
+                linear-gradient(135deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(0,0,0,0.05) 25%, transparent 25%)
+              `,
+              backgroundSize: '20px 20px',
+              backgroundPosition: '0 0, 10px 0, 10px -10px, 0px 10px',
+              clipPath: 'polygon(3% 0%, 97% 0%, 100% 3%, 100% 97%, 97% 100%, 3% 100%, 0% 97%, 0% 3%)'
+            }}
+          >
+            <div className="p-8 md:p-12">
+              {/* Grid de opciones */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                {/* Opción 1 - Crucero Alaska */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div 
+                    className="mb-4 rounded-lg overflow-hidden shadow-lg flex items-center justify-center"
+                    style={{
+                      backgroundImage: `url('/images/background-texture.jpg')`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  >
+                    <img 
+                      src="/images/alaska.jpg" 
+                      alt="Crucero en Alaska" 
+                      className="w-full h-48 object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-serif mb-2 tracking-wide">CRUCERO EN ALASKA</h3>
+                  <p className="text-sm mb-1 opacity-90">BBVA</p>
+                  <p className="text-xs mb-1 opacity-80">CUENTA</p>
+                  <p className="text-sm mb-1">XXX XXX XXXX</p>
+                  <p className="text-xs mb-2 opacity-80">CUENTA CLABE</p>
+                  <p className="text-xs">XXX XXX XXXXXXXXXXX X</p>
+                </motion.div>
+
+                {/* Opción 2 - Safari África */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div 
+                    className="mb-4 rounded-lg overflow-hidden shadow-lg flex items-center justify-center"
+                    style={{
+                      backgroundImage: `url('/images/background-texture.jpg')`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  >
+                    <img 
+                      src="/images/africa.jpg" 
+                      alt="Safari en África" 
+                      className="w-full h-48 object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-serif mb-2 tracking-wide">SAFARI EN ÁFRICA</h3>
+                  <p className="text-sm mb-1 opacity-90">BBVA</p>
+                  <p className="text-xs mb-1 opacity-80">CUENTA</p>
+                  <p className="text-sm mb-1">155 420 7338</p>
+                  <p className="text-xs mb-2 opacity-80">CUENTA CLABE</p>
+                  <p className="text-xs">012 180 01554207338 8</p>
+                </motion.div>
+              </div>
+
+              {/* Nota final */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center text-xs opacity-90 mt-6"
+              >
+                EL DESTINO SERÁ ELEGIDO POR LA CUENTA QUE RECAUDE MÁS FONDOS
+              </motion.p>
+            </div>
+          </motion.div>
+
+          {/* Indicador de scroll */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center text-gray-500 text-sm"
+          >
+            <div className="animate-bounce">
+              <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Sección Final: Imagen de Aceptación con Contador */}
+      <section 
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        style={{
+          backgroundImage: `url('/images/acepta.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay para mejor contraste */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          className="relative z-10 text-center px-4 w-full max-w-6xl"
+        >
+          {/* Iniciales F & H en dorado */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1.2 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center gap-6 md:gap-8 mb-8"
+          >
+            <h1 
+              className="font-serif text-8xl md:text-9xl drop-shadow-2xl"
+              style={{
+                color: '#d4af37',
+                textShadow: '0 0 30px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
+              }}
+            >
+              F
+            </h1>
+            <span 
+              className="text-6xl md:text-7xl font-light"
+              style={{
+                color: '#d4af37',
+                textShadow: '0 0 20px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
+              }}
+            >
+              &
+            </span>
+            <h1 
+              className="font-serif text-8xl md:text-9xl drop-shadow-2xl"
+              style={{
+                color: '#d4af37',
+                textShadow: '0 0 30px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
+              }}
+            >
+              H
+            </h1>
+          </motion.div>
+
+          {/* Fecha */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+            viewport={{ once: true }}
+            className="mb-12 text-white text-xl md:text-2xl tracking-widest font-light"
+            style={{
+              textShadow: '0 2px 4px rgba(0,0,0,0.8)'
+            }}
+          >
+            24 • 01 • 2026
+          </motion.p>
+
+          {/* Contador Regresivo */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <Countdown />
+          </motion.div>
+        </motion.div>
+      </section>
+    </motion.div>
+  )
+}
+
+export default InvitationContent
