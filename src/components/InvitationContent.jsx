@@ -174,12 +174,10 @@ const InvitationContent = () => {
 
       {/* Sección 2: Imagen de la pareja */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: `url('/images/couple-2.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundPosition: 'center center'
         }}
       >
         {/* Overlay para mejor contraste */}
@@ -603,12 +601,10 @@ const InvitationContent = () => {
 
       {/* Sección 4.5: Imagen de la Pedida */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: `url('/images/pedida.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundPosition: 'center center'
         }}
       >
         {/* Overlay para mejor contraste */}
@@ -823,12 +819,10 @@ const InvitationContent = () => {
 
       {/* Sección Final: Imagen de Aceptación con Contador */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: `url('/images/acepta.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundPosition: 'center center'
         }}
       >
         {/* Overlay para mejor contraste */}
