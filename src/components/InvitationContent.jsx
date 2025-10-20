@@ -26,12 +26,11 @@ const InvitationContent = () => {
     >
       {/* Sección 1: Tarjeta principal con fecha */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start overflow-x-hidden"
         style={{
           backgroundImage: `url('/images/background-texture.jpg')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundPosition: 'center'
         }}
       >
         <motion.div
@@ -39,12 +38,12 @@ const InvitationContent = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="w-full max-w-2xl"
+          className="w-full max-w-2xl px-2"
         >
           <div 
             className="relative rounded-lg shadow-2xl overflow-hidden bg-white/40 backdrop-blur-sm"
           >
-            <div className="relative p-12">
+            <div className="relative p-6 md:p-12">
               {/* Sobre decorativo */}
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
@@ -96,11 +95,11 @@ const InvitationContent = () => {
                   DECIDIMOS DECIRNOS QUE SÍ PARA TODA LA VIDA
                 </p>
                 
-                <h1 className="font-serif text-6xl text-gray-700 mb-3">
+                <h1 className="font-serif text-4xl md:text-6xl text-gray-700 mb-3">
                   FÁTIMA
                 </h1>
-                <p className="text-4xl text-gray-500 font-light italic mb-3">&</p>
-                <h1 className="font-serif text-6xl text-gray-700 mb-8">
+                <p className="text-3xl md:text-4xl text-gray-500 font-light italic mb-3">&</p>
+                <h1 className="font-serif text-4xl md:text-6xl text-gray-700 mb-8">
                   HÉCTOR
                 </h1>
                 
@@ -112,8 +111,8 @@ const InvitationContent = () => {
                 <div className="text-gray-600 mb-12">
                   <p className="text-xs tracking-widest mb-2">ENERO</p>
                   <p className="text-xs tracking-wider mb-2">SÁBADO</p>
-                  <p className="text-7xl font-light mb-2">24</p>
-                  <p className="text-lg tracking-widest">2026</p>
+                  <p className="text-6xl md:text-7xl font-light mb-2">24</p>
+                  <p className="text-base md:text-lg tracking-widest">2026</p>
                 </div>
               </motion.div>
 
