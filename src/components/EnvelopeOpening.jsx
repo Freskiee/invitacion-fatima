@@ -7,7 +7,7 @@ const EnvelopeOpening = ({ onComplete }) => {
   useEffect(() => {
     const timer1 = setTimeout(() => setStep(1), 1500)
     const timer2 = setTimeout(() => setStep(2), 3500)
-    const timer3 = setTimeout(() => onComplete(), 8000)
+    const timer3 = setTimeout(() => onComplete(), 5500)
     
     return () => {
       clearTimeout(timer1)
@@ -109,8 +109,8 @@ const EnvelopeOpening = ({ onComplete }) => {
               opacity: step >= 1 ? [1, 1, 0] : 1,
             }}
             transition={{ 
-              duration: 0.6, 
-              delay: 0.8,
+              duration: 0.4, 
+              delay: 0,
               times: [0, 0.5, 1]
             }}
           >

@@ -222,7 +222,7 @@ const InvitationContent = () => {
 
       {/* Sección 3: Detalles de la Recepción */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start overflow-x-hidden"
         style={{
           backgroundImage: `url('/images/background-texture.jpg')`,
           backgroundSize: 'cover',
@@ -239,7 +239,7 @@ const InvitationContent = () => {
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Tarjeta izquierda - Notas */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
               viewport={{ once: true }}
@@ -260,7 +260,7 @@ const InvitationContent = () => {
 
             {/* Tarjeta derecha - Recepción */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               viewport={{ once: true }}
