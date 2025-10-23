@@ -6,8 +6,8 @@ const EnvelopeOpening = ({ onComplete }) => {
 
   useEffect(() => {
     const timer1 = setTimeout(() => setStep(1), 1500)
-    const timer2 = setTimeout(() => setStep(2), 3500)
-    const timer3 = setTimeout(() => onComplete(), 5500)
+    const timer2 = setTimeout(() => setStep(2), 3200)
+    const timer3 = setTimeout(() => onComplete(), 6500)
     
     return () => {
       clearTimeout(timer1)
@@ -87,9 +87,9 @@ const EnvelopeOpening = ({ onComplete }) => {
               rotateX: step >= 1 ? 180 : 0,
             }}
             transition={{ 
-              duration: 0.8, 
-              ease: [0.34, 1.56, 0.64, 1],
-              delay: 0.2
+              duration: 1.2, 
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.3
             }}
           >
           </motion.div>
@@ -109,8 +109,8 @@ const EnvelopeOpening = ({ onComplete }) => {
               opacity: step >= 1 ? [1, 1, 0] : 1,
             }}
             transition={{ 
-              duration: 0.4, 
-              delay: 0,
+              duration: 0.5, 
+              delay: 0.2,
               times: [0, 0.5, 1]
             }}
           >
@@ -136,16 +136,16 @@ const EnvelopeOpening = ({ onComplete }) => {
               opacity: step >= 2 ? 1 : 0.95,
             }}
             transition={{ 
-              duration: 1.5, 
+              duration: 0.8, 
               ease: [0.43, 0.13, 0.23, 0.96],
-              delay: 0.5
+              delay: 0.2
             }}
           >
             <div className="p-8 text-center">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: step >= 2 ? 1 : 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <p className="text-xs tracking-widest text-gray-500 mb-4 font-light">
                   DECIDIMOS DECIRNOS QUE SÍ PARA TODA LA VIDA
