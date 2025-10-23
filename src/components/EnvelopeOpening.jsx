@@ -46,6 +46,33 @@ const EnvelopeOpening = ({ onComplete }) => {
             }}
           />
 
+          {/* Monograma FH en la solapa - fuera para que sea visible */}
+          <motion.div 
+            className="absolute"
+            style={{ 
+              width: '140px',
+              height: '140px',
+              top: '30px',
+              left: '50%',
+              marginLeft: '-70px',
+              zIndex: 25
+            }}
+            animate={{ 
+              opacity: step >= 1 ? 0 : 1,
+              scale: step >= 1 ? 0.8 : 1
+            }}
+            transition={{ duration: 0.4 }}
+          >
+            <img 
+              src="/images/letras.png" 
+              alt="FH" 
+              className="w-full h-full object-contain"
+              style={{
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
+              }}
+            />
+          </motion.div>
+
           {/* Solapa frontal que se abre */}
           <motion.div
             className="absolute top-0 left-0 right-0 h-40 shadow-xl"
@@ -60,38 +87,23 @@ const EnvelopeOpening = ({ onComplete }) => {
               rotateX: step >= 1 ? 180 : 0,
             }}
             transition={{ 
-              duration: 1.5, 
-              ease: [0.43, 0.13, 0.23, 0.96],
-              delay: 0.3
+              duration: 0.8, 
+              ease: [0.34, 1.56, 0.64, 1],
+              delay: 0.2
             }}
           >
-            {/* Monograma FH en la solapa */}
-            <motion.div 
-              className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gold font-serif font-bold"
-              style={{ 
-                fontSize: '3rem',
-                textShadow: '0 2px 4px rgba(0,0,0,0.2)'
-              }}
-              animate={{ 
-                opacity: step >= 1 ? 0 : 1,
-                scale: step >= 1 ? 0.8 : 1
-              }}
-              transition={{ duration: 0.4 }}
-            >
-              <div className="flex items-center gap-1">
-                <span>F</span>
-                <span style={{ fontSize: '2rem' }}>H</span>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Sello de cera */}
           <motion.div
-            className="absolute top-36 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full z-30"
+            className="absolute left-1/2 z-30"
             style={{
-              background: 'radial-gradient(circle at 30% 30%, #e5c77d 0%, #c9a961 40%, #b8941f 100%)',
-              boxShadow: '0 6px 12px rgba(0,0,0,0.4), inset -2px -2px 6px rgba(0,0,0,0.3), inset 2px 2px 6px rgba(255,255,255,0.3)'
+              width: '85px',
+              height: '85px',
+              top: '130px',
+              marginLeft: '-42.5px'
             }}
+            initial={{ opacity: 1, scale: 1 }}
             animate={{
               scale: step >= 1 ? [1, 1.15, 0] : 1,
               opacity: step >= 1 ? [1, 1, 0] : 1,
@@ -102,26 +114,14 @@ const EnvelopeOpening = ({ onComplete }) => {
               times: [0, 0.5, 1]
             }}
           >
-            {/* Imagen del sello */}
-            <div className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-full">
-              <img 
-                src="/images/seal.png" 
-                alt="Sello" 
-                className="w-16 h-16 object-contain opacity-70"
-                onError={(e) => {
-                  // Fallback a SVG si no existe la imagen
-                  e.target.style.display = 'none'
-                }}
-              />
-              <svg width="50" height="50" viewBox="0 0 50 50" className="opacity-60 absolute">
-                <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5"/>
-                <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5" transform="rotate(90 25 15)"/>
-                <rect x="24" y="15" width="2" height="15" fill="#8b7355"/>
-                <circle cx="25" cy="32" r="3" fill="#8b7355" opacity="0.4"/>
-                <circle cx="20" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
-                <circle cx="30" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
-              </svg>
-            </div>
+            <img 
+              src="/images/sello.png" 
+              alt="Sello" 
+              className="w-full h-full object-contain"
+              style={{
+                filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.4))'
+              }}
+            />
           </motion.div>
 
           {/* Tarjeta interior que sale */}
@@ -145,7 +145,7 @@ const EnvelopeOpening = ({ onComplete }) => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: step >= 2 ? 1 : 0 }}
-                transition={{ delay: 2, duration: 1 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
               >
                 <p className="text-xs tracking-widest text-gray-500 mb-4 font-light">
                   DECIDIMOS DECIRNOS QUE SÍ PARA TODA LA VIDA

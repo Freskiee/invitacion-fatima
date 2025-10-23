@@ -54,31 +54,30 @@ const InvitationContent = () => {
               >
                 <div className="relative mx-auto w-full max-w-md">
                   <div className="bg-sage p-6 relative" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)' }}>
-                    <div className="text-center py-4">
-                      <div className="text-gold text-4xl font-serif font-bold mb-2">
-                        <span>F</span><span className="text-2xl">H</span>
-                      </div>
+                    <div className="text-center py-4 flex justify-center">
+                      <img 
+                        src="/images/letras.png" 
+                        alt="FH" 
+                        className="w-20 h-20 object-contain"
+                        style={{
+                          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
+                        }}
+                      />
                     </div>
                   </div>
                   
                   {/* Sello */}
                   <div 
-                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full z-10"
-                    style={{
-                      background: 'radial-gradient(circle at 30% 30%, #e5c77d 0%, #c9a961 40%, #b8941f 100%)',
-                      boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
-                    }}
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-16 h-16 z-10"
                   >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg width="40" height="40" viewBox="0 0 50 50" className="opacity-60">
-                        <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5"/>
-                        <ellipse cx="25" cy="15" rx="8" ry="4" fill="#8b7355" opacity="0.5" transform="rotate(90 25 15)"/>
-                        <rect x="24" y="15" width="2" height="15" fill="#8b7355"/>
-                        <circle cx="25" cy="32" r="3" fill="#8b7355" opacity="0.4"/>
-                        <circle cx="20" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
-                        <circle cx="30" cy="35" r="2" fill="#8b7355" opacity="0.3"/>
-                      </svg>
-                    </div>
+                    <img 
+                      src="/images/sello.png" 
+                      alt="Sello" 
+                      className="w-full h-full object-contain"
+                      style={{
+                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+                      }}
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -840,35 +839,16 @@ const InvitationContent = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.2 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-6 md:gap-8 mb-8"
+            className="flex items-center justify-center mb-8"
           >
-            <h1 
-              className="font-serif text-8xl md:text-9xl drop-shadow-2xl"
+            <img 
+              src="/images/letras.png" 
+              alt="FH" 
+              className="w-64 md:w-80 h-auto object-contain"
               style={{
-                color: '#d4af37',
-                textShadow: '0 0 30px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
+                filter: 'drop-shadow(0 0 30px rgba(212, 175, 55, 0.5)) drop-shadow(0 4px 8px rgba(0,0,0,0.8))'
               }}
-            >
-              F
-            </h1>
-            <span 
-              className="text-6xl md:text-7xl font-light"
-              style={{
-                color: '#d4af37',
-                textShadow: '0 0 20px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
-              }}
-            >
-              &
-            </span>
-            <h1 
-              className="font-serif text-8xl md:text-9xl drop-shadow-2xl"
-              style={{
-                color: '#d4af37',
-                textShadow: '0 0 30px rgba(212, 175, 55, 0.5), 0 4px 8px rgba(0,0,0,0.8)'
-              }}
-            >
-              H
-            </h1>
+            />
           </motion.div>
 
           {/* Fecha */}
