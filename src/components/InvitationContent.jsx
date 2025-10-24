@@ -952,45 +952,45 @@ const InvitationContent = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 1 }}
             viewport={{ once: true }}
-            className="mt-16 max-w-2xl mx-auto"
+            className="mt-12 max-w-xl mx-auto"
           >
-            <h3 className="text-2xl md:text-3xl font-serif text-center mb-8 text-white drop-shadow-lg">
+            <h3 className="text-lg md:text-xl font-serif text-center mb-6 text-white/90 drop-shadow">
               Confirma tu Asistencia
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-6 px-4">
+            <div className="grid md:grid-cols-2 gap-4 px-4">
               {/* Botón Confirmar */}
               <motion.a
-                href="https://wa.me/5217351234567?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Héctor%20%26%20Fátima%20el%2024%20de%20enero%20de%202026.%20¡Nos%20vemos%20allí!"
+                href="https://wa.me/525512999642?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Héctor%20%26%20Fátima%20el%2024%20de%20enero%20de%202026.%20¡Nos%20vemos%20allí!"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/90 backdrop-blur-sm text-sage font-semibold py-4 px-8 rounded-lg shadow-xl hover:bg-white transition-all duration-300 text-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white/10 backdrop-blur-sm text-white py-3 px-6 rounded-lg shadow-lg hover:bg-white/25 transition-all duration-300 text-center border border-white/20"
               >
-                <svg className="w-8 h-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
-                <span className="block text-lg">Confirmar Asistencia</span>
+                <span className="block text-sm">Confirmar</span>
               </motion.a>
 
               {/* Botón No Asistir */}
               <motion.a
-                href="https://wa.me/5217351234567?text=Hola,%20lamentablemente%20no%20podré%20asistir%20a%20la%20boda%20de%20Héctor%20%26%20Fátima.%20Les%20deseo%20lo%20mejor%20en%20su%20gran%20día."
+                href="https://wa.me/525512999642?text=Hola,%20lamentablemente%20no%20podré%20asistir%20a%20la%20boda%20de%20Héctor%20%26%20Fátima.%20Les%20deseo%20lo%20mejor%20en%20su%20gran%20día."
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/90 backdrop-blur-sm text-gray-600 font-semibold py-4 px-8 rounded-lg shadow-xl hover:bg-white transition-all duration-300 text-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white/10 backdrop-blur-sm text-white py-3 px-6 rounded-lg shadow-lg hover:bg-white/25 transition-all duration-300 text-center border border-white/20"
               >
-                <svg className="w-8 h-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mx-auto mb-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
                 </svg>
-                <span className="block text-lg">No Podré Asistir</span>
+                <span className="block text-sm">No Asistiré</span>
               </motion.a>
             </div>
 
-            <p className="text-center text-white/80 text-sm mt-6 drop-shadow">
+            <p className="text-center text-white/60 text-xs mt-4 drop-shadow">
               Tu respuesta será enviada por WhatsApp
             </p>
           </motion.div>
