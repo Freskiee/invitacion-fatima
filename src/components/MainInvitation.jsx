@@ -72,11 +72,11 @@ const MainInvitation = () => {
             </p>
             
             <h1 className="font-serif text-6xl text-gray-700 mb-3">
-              FÁTIMA
+              HÉCTOR
             </h1>
             <p className="text-4xl text-gray-500 font-light italic mb-3">&</p>
             <h1 className="font-serif text-6xl text-gray-700 mb-8">
-              HÉCTOR
+              FÁTIMA
             </h1>
             
             <p className="text-sm tracking-wide text-gray-600 mb-8 leading-relaxed">
@@ -85,8 +85,8 @@ const MainInvitation = () => {
             </p>
             
             <div className="text-gray-600 mb-12">
-              <p className="text-xs tracking-widest mb-2">ENERO</p>
-              <p className="text-xs tracking-wider mb-2">SÁBADO</p>
+              <p className="text-xs tracking-widest mb-2">SÁBADO</p>
+              <p className="text-xs tracking-wider mb-2">ENERO</p>
               <p className="text-7xl font-light mb-2">24</p>
               <p className="text-lg tracking-widest">2026</p>
             </div>

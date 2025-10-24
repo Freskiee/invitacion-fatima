@@ -151,19 +151,19 @@ const EnvelopeOpening = ({ onComplete }) => {
                   DECIDIMOS DECIRNOS QUE SÍ PARA TODA LA VIDA
                 </p>
                 <h1 className="font-serif text-5xl text-gray-700 mb-2">
-                  FÁTIMA
+                  HÉCTOR
                 </h1>
                 <p className="text-3xl text-gray-500 font-light italic mb-2">&</p>
                 <h1 className="font-serif text-5xl text-gray-700 mb-6">
-                  HÉCTOR
+                  FÁTIMA
                 </h1>
                 <p className="text-xs tracking-wide text-gray-600 mb-6 px-4 leading-relaxed">
                   TENEMOS EL HONOR DE INVITARLOS A<br />
                   CELEBRAR NUESTRA UNIÓN EL DÍA
                 </p>
                 <div className="text-gray-600">
-                  <p className="text-xs tracking-widest mb-1">ENERO</p>
-                  <p className="text-xs tracking-wider mb-1">SÁBADO</p>
+                  <p className="text-xs tracking-widest mb-1">SÁBADO</p>
+                  <p className="text-xs tracking-wider mb-1">ENERO</p>
                   <p className="text-6xl font-light mb-1">24</p>
                   <p className="text-sm tracking-widest">2026</p>
                 </div>

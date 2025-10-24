@@ -5,6 +5,8 @@ import Countdown from './Countdown'
 const InvitationContent = () => {
   const scrollRef = useRef(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [imagesLoaded, setImagesLoaded] = useState({})
   const carouselImages = [
     '/images/pedida.jpeg',
     '/images/fh3.jpeg',
@@ -21,6 +23,49 @@ const InvitationContent = () => {
       scrollRef.current.scrollTop = 0
     }
   }, [])
+
+  // Precargar todas las imágenes del carrusel
+  useEffect(() => {
+    carouselImages.forEach((src, index) => {
+      const img = new Image()
+      img.src = src
+      img.onload = () => {
+        setImagesLoaded(prev => ({ ...prev, [index]: true }))
+      }
+    })
+  }, [])
+
+  // Auto-play del carrusel
+  useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))
+    }, 6000) // Cambia cada 6 segundos
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, carouselImages.length])
+
+  const handlePrevious = () => {
+    setIsAutoPlaying(false)
+    setCurrentImageIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))
+    // Reactiva el auto-play después de 10 segundos
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const handleNext = () => {
+    setIsAutoPlaying(false)
+    setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))
+    // Reactiva el auto-play después de 10 segundos
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const handleDotClick = (index) => {
+    setIsAutoPlaying(false)
+    setCurrentImageIndex(index)
+    // Reactiva el auto-play después de 10 segundos
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
 
   return (
     <motion.div
@@ -105,11 +150,11 @@ const InvitationContent = () => {
                 </p>
                 
                 <h1 className="font-serif text-4xl md:text-6xl text-gray-700 mb-3">
-                  FÁTIMA
+                  HÉCTOR
                 </h1>
                 <p className="text-3xl md:text-4xl text-gray-500 font-light italic mb-3">&</p>
                 <h1 className="font-serif text-4xl md:text-6xl text-gray-700 mb-8">
-                  HÉCTOR
+                  FÁTIMA
                 </h1>
                 
                 <p className="text-sm tracking-wide text-gray-600 mb-8 leading-relaxed">
@@ -118,8 +163,8 @@ const InvitationContent = () => {
                 </p>
                 
                 <div className="text-gray-600 mb-12">
-                  <p className="text-xs tracking-widest mb-2">ENERO</p>
-                  <p className="text-xs tracking-wider mb-2">SÁBADO</p>
+                  <p className="text-xs tracking-widest mb-2">SÁBADO</p>
+                  <p className="text-xs tracking-wider mb-2">ENERO</p>
                   <p className="text-6xl md:text-7xl font-light mb-2">24</p>
                   <p className="text-base md:text-lg tracking-widest">2026</p>
                 </div>
@@ -349,6 +394,8 @@ const InvitationContent = () => {
             </div>
 
             <p className="text-xs text-center text-gray-500 leading-relaxed">
+              DAMAS
+              <br />
               FAVOR DE NO USAR<br />
               COLOR BLANCO U OLIVA
             </p>
@@ -587,14 +634,24 @@ const InvitationContent = () => {
 
       {/* Sección 4.5: Carrusel de Fotos */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed transition-all duration-700"
-        style={{
-          backgroundImage: `url('${carouselImages[currentImageIndex]}')`,
-          backgroundPosition: 'center center'
-        }}
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative overflow-hidden"
       >
+        {/* Todas las imágenes apiladas con crossfade */}
+        {carouselImages.map((image, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+            style={{
+              backgroundImage: `url('${image}')`,
+              backgroundPosition: 'center center',
+              opacity: index === currentImageIndex ? 1 : 0,
+              zIndex: index === currentImageIndex ? 1 : 0
+            }}
+          />
+        ))}
+        
         {/* Overlay para mejor contraste */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 z-10" />
 
         {/* Botón anterior */}
         <motion.button
@@ -602,7 +659,7 @@ const InvitationContent = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
           viewport={{ once: true }}
-          onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))}
+          onClick={handlePrevious}
           className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-3 md:p-4 transition-all duration-300"
         >
           <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -616,7 +673,7 @@ const InvitationContent = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
           viewport={{ once: true }}
-          onClick={() => setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))}
+          onClick={handleNext}
           className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-3 md:p-4 transition-all duration-300"
         >
           <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -635,7 +692,7 @@ const InvitationContent = () => {
           {carouselImages.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentImageIndex(index)}
+              onClick={() => handleDotClick(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentImageIndex 
                   ? 'bg-white w-8' 

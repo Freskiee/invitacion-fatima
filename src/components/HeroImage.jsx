@@ -37,7 +37,7 @@ const HeroImage = ({ onComplete }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
         >
-          Fátima & Héctor
+          Héctor & Fátima
         </motion.h1>
         
         <motion.p 
