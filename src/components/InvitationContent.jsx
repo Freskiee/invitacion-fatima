@@ -8,12 +8,12 @@ const InvitationContent = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [imagesLoaded, setImagesLoaded] = useState({})
   const carouselImages = [
-    '/images/pedida.jpeg',
     '/images/fh3.jpeg',
     '/images/fh6.jpeg',
     '/images/fh1.jpeg',
     '/images/fh4.jpeg',
     '/images/fh5.jpeg',
+    '/images/pedida.jpeg',
     '/images/fh2.jpeg'
   ]
 
