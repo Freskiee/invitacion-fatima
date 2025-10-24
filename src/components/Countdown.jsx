@@ -50,29 +50,19 @@ const Countdown = () => {
         transition={{ delay: shouldAnimate ? delay : 0, duration: shouldAnimate ? 0.8 : 0 }}
         className="flex flex-col items-center"
       >
-        <div 
-          className="relative w-20 h-20 md:w-28 md:h-28 flex items-center justify-center rounded-lg mb-2"
+        <span 
+          className="text-5xl md:text-6xl font-light mb-2"
           style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(212, 175, 55, 0.3)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.1)'
+            color: '#ffffff',
+            textShadow: '0 2px 8px rgba(0,0,0,0.6)'
           }}
         >
-          <span 
-            className="text-4xl md:text-5xl font-serif font-bold"
-            style={{
-              color: '#d4af37',
-              textShadow: '0 0 20px rgba(212, 175, 55, 0.5), 0 2px 4px rgba(0,0,0,0.8)'
-            }}
-          >
-            {String(value).padStart(2, '0')}
-          </span>
-        </div>
+          {String(value).padStart(2, '0')}
+        </span>
         <span 
           className="text-xs md:text-sm tracking-widest uppercase"
           style={{
-            color: '#d4af37',
+            color: '#ffffff',
             textShadow: '0 2px 4px rgba(0,0,0,0.8)'
           }}
         >
@@ -97,8 +87,8 @@ const Countdown = () => {
         transition={{ delay: shouldAnimateContainer ? 0.2 : 0, duration: shouldAnimateContainer ? 0.8 : 0 }}
         className="text-2xl md:text-3xl font-serif text-center mb-8"
         style={{
-          color: '#d4af37',
-          textShadow: '0 0 20px rgba(212, 175, 55, 0.5), 0 2px 4px rgba(0,0,0,0.8)'
+          color: '#ffffff',
+          textShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0,0,0,0.8)'
         }}
       >
         Faltan

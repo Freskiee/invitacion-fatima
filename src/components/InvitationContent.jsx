@@ -1,9 +1,19 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Countdown from './Countdown'
 
 const InvitationContent = () => {
   const scrollRef = useRef(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const carouselImages = [
+    '/images/pedida.jpeg',
+    '/images/fh3.jpeg',
+    '/images/fh6.jpeg',
+    '/images/fh1.jpeg',
+    '/images/fh4.jpeg',
+    '/images/fh5.jpeg',
+    '/images/fh2.jpeg'
+  ]
 
   useEffect(() => {
     // Scroll suave al inicio cuando se monta el componente
@@ -47,7 +57,7 @@ const InvitationContent = () => {
               {/* Sobre decorativo */}
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }} 
                 transition={{ delay: 0.3, duration: 0.8 }}
                 viewport={{ once: true }}
                 className="mb-8"
@@ -180,29 +190,6 @@ const InvitationContent = () => {
       >
         {/* Overlay para mejor contraste */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true }}
-          className="relative z-10 text-center text-white px-4"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20"
-          >
-            <h2 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-2xl">
-              Nuestra Historia
-            </h2>
-            <p className="text-lg md:text-xl tracking-wide drop-shadow-lg max-w-2xl mx-auto">
-              Un amor que comenzó como una amistad y creció hasta convertirse en algo eterno
-            </p>
-          </motion.div>
-        </motion.div>
 
         {/* Indicador de más contenido */}
         <motion.div
@@ -285,11 +272,12 @@ const InvitationContent = () => {
                 {/* Logo de Finca Guadalupe */}
                 <div className="flex justify-center mb-6">
                   <img 
-                    src="/images/finca-logo.png" 
+                    src="/images/finca-logo.jpg" 
                     alt="Finca Guadalupe Logo" 
                     className="w-48 h-auto object-contain"
                     style={{
-                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
+                      mixBlendMode: 'screen',
+                      filter: 'contrast(1.5) brightness(1.1)'
                     }}
                     onError={(e) => {
                       console.error('Error cargando logo:', e)
@@ -597,38 +585,64 @@ const InvitationContent = () => {
         </motion.div>
       </section>
 
-      {/* Sección 4.5: Imagen de la Pedida */}
+      {/* Sección 4.5: Carrusel de Fotos */}
       <section 
-        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed"
+        className="min-h-screen flex items-center justify-center p-4 scroll-snap-align-start relative bg-cover bg-center md:bg-fixed transition-all duration-700"
         style={{
-          backgroundImage: `url('/images/pedida.jpeg')`,
+          backgroundImage: `url('${carouselImages[currentImageIndex]}')`,
           backgroundPosition: 'center center'
         }}
       >
         {/* Overlay para mejor contraste */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
+
+        {/* Botón anterior */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
           viewport={{ once: true }}
-          className="relative z-10 text-center text-white px-4"
+          onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))}
+          className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-3 md:p-4 transition-all duration-300"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20"
-          >
-            <h2 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-2xl">
-              La Pedida
-            </h2>
-            <p className="text-lg md:text-xl tracking-wide drop-shadow-lg max-w-2xl mx-auto">
-              El momento en que decidimos comenzar esta aventura juntos
-            </p>
-          </motion.div>
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </motion.button>
+
+        {/* Botón siguiente */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewport={{ once: true }}
+          onClick={() => setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))}
+          className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-3 md:p-4 transition-all duration-300"
+        >
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </motion.button>
+
+        {/* Indicadores de puntos */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 1 }}
+          viewport={{ once: true }}
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 flex gap-3"
+        >
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white w-8' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
         </motion.div>
 
         {/* Indicador de más contenido */}
