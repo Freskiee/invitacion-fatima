@@ -1021,7 +1021,7 @@ const InvitationContent = () => {
             <div className="grid md:grid-cols-2 gap-4 px-4">
               {/* Botón Confirmar */}
               <motion.a
-                href={`https://wa.me/525512999642?text=${encodeURIComponent(
+                href={`https://wa.me/5217779866116?text=${encodeURIComponent(
                   guestData 
                     ? `¡Hola! Soy ${guestData.name}. Confirmo mi asistencia a la boda de Héctor & Fátima el 24 de enero de 2026. ¡Nos vemos allí!`
                     : '¡Hola! Confirmo mi asistencia a la boda de Héctor & Fátima el 24 de enero de 2026. ¡Nos vemos allí!'
@@ -1040,7 +1040,7 @@ const InvitationContent = () => {
 
               {/* Botón No Asistir */}
               <motion.a
-                href={`https://wa.me/525512999642?text=${encodeURIComponent(
+                href={`https://wa.me/5217779866116?text=${encodeURIComponent(
                   guestData 
                     ? `Hola, soy ${guestData.name}. Lamentablemente no podré asistir a la boda de Héctor & Fátima. Les deseo lo mejor en su gran día.`
                     : 'Hola, lamentablemente no podré asistir a la boda de Héctor & Fátima. Les deseo lo mejor en su gran día.'
