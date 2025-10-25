@@ -9,6 +9,7 @@ const InvitationContent = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [imagesLoaded, setImagesLoaded] = useState({})
   const [guestData, setGuestData] = useState(null)
+  const [copiedClabe, setCopiedClabe] = useState(null)
   
   const carouselImages = [
     '/images/fh3.jpeg',
@@ -593,18 +594,18 @@ const InvitationContent = () => {
                   }}
                 >
                   <img 
-                    src="/images/finca3.jpg" 
-                    alt="Finca Valeria" 
+                    src="/images/claustro.jpeg" 
+                    alt="El Claustro" 
                     className="w-full h-full object-contain"
                   />
                 </div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-serif mb-2 text-gray-700">FINCA VALERIA</h3>
+                <h3 className="text-xl font-serif mb-2 text-gray-700">EL CLAUSTRO</h3>
                 <p className="text-xs text-gray-500 mb-2">1 MIN DE DISTANCIA</p>
                 <p className="text-xs text-gray-600 mb-4">ALIMENTOS INCLUIDOS</p>
                 <a
-                  href="https://www.google.com/maps/place/Finca+Valeria/@18.7320681,-98.8968436,17z/data=!4m14!1m7!3m6!1s0x85ce66f13a28d4ef:0x3b05798fcdd4dae6!2sFinca+Guadalupe!8m2!3d18.7320681!4d-98.8942687!16s%2Fg%2F1232kf19c!3m5!1s0x85ce678b9aed67bf:0x8cded6875f1d78f4!8m2!3d18.7311263!4d-98.8948395!16s%2Fg%2F11fn46z94b?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/place/El+Claustro/@18.7322521,-98.9001274,17z/data=!3m1!4b1!4m6!3m5!1s0x85ce66f3f7fac06d:0x54741ab23dd40918!8m2!3d18.7322521!4d-98.8975525!16s%2Fg%2F12cpfkhh8?hl=es-mx&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block border-2 border-sage text-sage px-6 py-2 rounded text-sm tracking-wider hover:bg-sage hover:text-white transition-all duration-300"
@@ -810,34 +811,56 @@ const InvitationContent = () => {
             <div className="p-8 md:p-12">
               {/* Grid de opciones */}
               <div className="grid md:grid-cols-2 gap-8 mb-8">
-                {/* Opción 1 - Crucero Alaska */}
+                {/* Opción 1 - Auroras Boreales */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="rounded-lg p-6 shadow-lg"
+                  style={{
+                    backgroundImage: `url('/images/background-texture.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
                 >
                   <div 
-                    className="mb-4 rounded-lg overflow-hidden shadow-lg flex items-center justify-center"
-                    style={{
-                      backgroundImage: `url('/images/background-texture.jpg')`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
+                    className="mb-4 rounded-lg overflow-hidden shadow-md flex items-center justify-center bg-white"
                   >
                     <img 
-                      src="/images/alaska.jpg" 
-                      alt="Crucero en Alaska" 
-                      className="w-full h-48 object-contain"
+                      src="/images/auroras.jpeg" 
+                      alt="Auroras Boreales" 
+                      className="w-full h-48 object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-serif mb-2 tracking-wide">CRUCERO EN ALASKA</h3>
-                  <p className="text-sm mb-1 opacity-90">BBVA</p>
-                  <p className="text-xs mb-1 opacity-80">CUENTA</p>
-                  <p className="text-sm mb-1">XXX XXX XXXX</p>
-                  <p className="text-xs mb-2 opacity-80">CUENTA CLABE</p>
-                  <p className="text-xs">XXX XXX XXXXXXXXXXX X</p>
+                  <h3 className="text-xl font-serif mb-4 tracking-wide text-gray-800 text-center">AURORAS BOREALES</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-xs text-gray-700 mb-1 font-semibold">Titular:</p>
+                      <p className="text-sm font-medium text-gray-800">Hector Julian Rodriguez Zuckerman</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-700 mb-1 font-semibold">Clabe BBVA:</p>
+                      <div 
+                        className={`flex items-center justify-between border-2 p-3 rounded cursor-pointer transition-colors ${
+                          copiedClabe === 'auroras' 
+                            ? 'bg-green-100 border-green-400' 
+                            : 'bg-white border-gray-600 hover:bg-gray-50 hover:border-sage'
+                        }`}
+                        onClick={() => {
+                          navigator.clipboard.writeText('012180015362999286')
+                          setCopiedClabe('auroras')
+                          setTimeout(() => setCopiedClabe(null), 1000)
+                        }}
+                        title="Click para copiar"
+                      >
+                        <span className="text-sm font-mono text-gray-900 font-semibold">012 180 01536299928 6</span>
+                        <svg className="w-5 h-5 text-gray-600 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
 
                 {/* Opción 2 - Safari África */}
@@ -846,28 +869,50 @@ const InvitationContent = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.7, duration: 0.8 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="rounded-lg p-6 shadow-lg"
+                  style={{
+                    backgroundImage: `url('/images/background-texture.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
                 >
                   <div 
-                    className="mb-4 rounded-lg overflow-hidden shadow-lg flex items-center justify-center"
-                    style={{
-                      backgroundImage: `url('/images/background-texture.jpg')`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
+                    className="mb-4 rounded-lg overflow-hidden shadow-md flex items-center justify-center bg-white"
                   >
                     <img 
                       src="/images/africa.jpg" 
                       alt="Safari en África" 
-                      className="w-full h-48 object-contain"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-serif mb-2 tracking-wide">SAFARI EN ÁFRICA</h3>
-                  <p className="text-sm mb-1 opacity-90">BBVA</p>
-                  <p className="text-xs mb-1 opacity-80">CUENTA</p>
-                  <p className="text-sm mb-1">155 420 7338</p>
-                  <p className="text-xs mb-2 opacity-80">CUENTA CLABE</p>
-                  <p className="text-xs">012 180 01554207338 8</p>
+                  <h3 className="text-xl font-serif mb-4 tracking-wide text-gray-800 text-center">SAFARI EN ÁFRICA</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-xs text-gray-700 mb-1 font-semibold">Titular:</p>
+                      <p className="text-sm font-medium text-gray-800">Fatima Maria Desentis Giraldo</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-700 mb-1 font-semibold">Clabe BBVA:</p>
+                      <div 
+                        className={`flex items-center justify-between border-2 p-3 rounded cursor-pointer transition-colors ${
+                          copiedClabe === 'safari' 
+                            ? 'bg-green-100 border-green-400' 
+                            : 'bg-white border-gray-600 hover:bg-gray-50 hover:border-sage'
+                        }`}
+                        onClick={() => {
+                          navigator.clipboard.writeText('012180015542073388')
+                          setCopiedClabe('safari')
+                          setTimeout(() => setCopiedClabe(null), 1000)
+                        }}
+                        title="Click para copiar"
+                      >
+                        <span className="text-sm font-mono text-gray-900 font-semibold">012 180 01554207338 8</span>
+                        <svg className="w-5 h-5 text-gray-600 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
 
