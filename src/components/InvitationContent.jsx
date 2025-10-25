@@ -976,7 +976,11 @@ const InvitationContent = () => {
             <div className="grid md:grid-cols-2 gap-4 px-4">
               {/* Botón Confirmar */}
               <motion.a
-                href="https://wa.me/525512999642?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Héctor%20%26%20Fátima%20el%2024%20de%20enero%20de%202026.%20¡Nos%20vemos%20allí!"
+                href={`https://wa.me/525512999642?text=${encodeURIComponent(
+                  guestData 
+                    ? `¡Hola! Soy ${guestData.name}. Confirmo mi asistencia a la boda de Héctor & Fátima el 24 de enero de 2026. ¡Nos vemos allí!`
+                    : '¡Hola! Confirmo mi asistencia a la boda de Héctor & Fátima el 24 de enero de 2026. ¡Nos vemos allí!'
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -991,7 +995,11 @@ const InvitationContent = () => {
 
               {/* Botón No Asistir */}
               <motion.a
-                href="https://wa.me/525512999642?text=Hola,%20lamentablemente%20no%20podré%20asistir%20a%20la%20boda%20de%20Héctor%20%26%20Fátima.%20Les%20deseo%20lo%20mejor%20en%20su%20gran%20día."
+                href={`https://wa.me/525512999642?text=${encodeURIComponent(
+                  guestData 
+                    ? `Hola, soy ${guestData.name}. Lamentablemente no podré asistir a la boda de Héctor & Fátima. Les deseo lo mejor en su gran día.`
+                    : 'Hola, lamentablemente no podré asistir a la boda de Héctor & Fátima. Les deseo lo mejor en su gran día.'
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
