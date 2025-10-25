@@ -172,7 +172,3 @@ Copia y pega estas URLs para enviar a cada invitado:
 TOTAL: 55 invitados - 119 boletos
 ========================================
 
-NOTA: Reemplaza "tu-sitio.com" con tu dominio real cuando publiques la página.
-
-Para probar localmente usa:
-http://localhost:5173/?invitado=familia-desentis-giraldo
