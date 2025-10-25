@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import Countdown from './Countdown'
+import { getGuestByCode, getGuestCodeFromURL } from '../data/guestList'
 
 const InvitationContent = () => {
   const scrollRef = useRef(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [imagesLoaded, setImagesLoaded] = useState({})
+  const [guestData, setGuestData] = useState(null)
+  
   const carouselImages = [
     '/images/fh3.jpeg',
     '/images/fh6.jpeg',
@@ -21,6 +24,13 @@ const InvitationContent = () => {
     // Scroll suave al inicio cuando se monta el componente
     if (scrollRef.current) {
       scrollRef.current.scrollTop = 0
+    }
+    
+    // Cargar datos del invitado desde la URL
+    const guestCode = getGuestCodeFromURL()
+    if (guestCode) {
+      const guest = getGuestByCode(guestCode)
+      setGuestData(guest)
     }
   }, [])
 
@@ -186,11 +196,16 @@ const InvitationContent = () => {
                   }}
                 >
                   <div className="text-center px-8">
+                    {guestData && (
+                      <h3 className="font-serif text-lg md:text-xl text-sage mb-3">
+                        {guestData.name}
+                      </h3>
+                    )}
                     <p className="text-xs tracking-wide text-gray-600 leading-relaxed mb-4">
                       CON MUCHO<br />
                       CARIÑO HEMOS<br />
-                      RESERVADO UN<br />
-                      PASE<br />
+                      RESERVADO {guestData ? guestData.tickets : 'UN'}<br />
+                      {guestData && guestData.tickets === 1 ? 'PASE' : 'PASES'}<br />
                       PARA TI
                     </p>
                     <div className="absolute right-8 top-1/2 transform translate-x-4">

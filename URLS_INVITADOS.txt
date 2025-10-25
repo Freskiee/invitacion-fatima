@@ -1,0 +1,178 @@
+URLS PERSONALIZADAS PARA CADA INVITADO
+========================================
+
+Copia y pega estas URLs para enviar a cada invitado:
+
+1. Familia Desentis Giraldo (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-desentis-giraldo
+
+2. Montse y Ariel (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=montse-ariel
+
+3. Familia García Lim (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-garcia-lim
+
+4. Familia Desentis Mulia (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-desentis-mulia
+
+5. Familia Santamaría Desentis (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-santamaria-desentis
+
+6. Familia Sánchez Peralta (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-sanchez-peralta
+
+7. Familia Merino Zuckerman (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-merino-zuckerman
+
+8. Familia Calvo Zuckerman (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-calvo-zuckerman
+
+9. Familia Castellanos Zuckerman (2 boletos)
+   https://fatima-hector.netlify.app/?invitado=familia-castellanos-zuckerman
+
+10. Familia Zuckerman Lazo (3 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-zuckerman-lazo
+
+11. Tania Calvo Zuckerman (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=tania-calvo-zuckerman
+
+12. Familia Caso Calvo (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-caso-calvo
+
+13. Familia Zuckerman Hoyuela (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-zuckerman-hoyuela
+
+14. Familia Rodríguez Diosdado (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-rodriguez-diosdado
+
+15. Familia Rodríguez Álvarez (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-rodriguez-alvarez
+
+16. Diego y Mariana (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=diego-mariana
+
+17. Familia Rodríguez Uribe (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-rodriguez-uribe
+
+18. Familia Rullán (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-rullan
+
+19. Familia Vera (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-vera
+
+20. Familia Martorell (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-martorell
+
+21. Jorge Escalona (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=jorge-escalona
+
+22. Familia Ambrosi (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-ambrosi
+
+23. Carina Quiroz (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=carina-quiroz
+
+24. Diego Guido (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=diego-guido
+
+25. Everardo y Jimena (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=everardo-jimena
+
+26. Jorge y Ela (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=jorge-ela
+
+27. Max y Fernanda (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=max-fernanda
+
+28. Kevin y Melissa (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=kevin-melissa
+
+29. Pablo Maldujano (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=pablo-maldujano
+
+30. Ángeles Alonso (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=angeles-alonso
+
+31. Manuel Giraldo (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=manuel-giraldo
+
+32. Majo y Tiago (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=majo-tiago
+
+33. Familia Villaseñor (4 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-villasenor
+
+34. Familia Cahue (4 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-cahue
+
+35. Alexia y Rubén (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=alexia-ruben
+
+36. Familia González Álvarez (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-gonzalez-alvarez
+
+37. Familia Arce González (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-arce-gonzalez
+
+38. Familia Aguilar Macías (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-aguilar-macias
+
+39. Familia Galindo Menéndez (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-galindo-menendez
+
+40. Familia Vázquez Olivera (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-vazquez-olivera
+
+41. Familia Muñoz Campillo (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-munoz-campillo
+
+42. Familia Hernández (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-hernandez
+
+43. Familia Hurtado (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-hurtado
+
+44. Familia Ventura (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-ventura
+
+45. Familia Villeda Mena Brito (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-villeda-mena-brito
+
+46. Francisco y Beatriz (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=francisco-beatriz
+
+47. Familia Campos Zuckerman (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-campos-zuckerman
+
+48. Mariana y Humberto (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=mariana-humberto
+
+49. Jocelyn Zuckerman (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=jocelyn-zuckerman
+
+50. Familia Mercadillo Reyes (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-mercadillo-reyes
+
+51. Ericka Lara (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=ericka-lara
+
+52. Familia Moreno Villareal (5 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-moreno-villareal
+
+53. Familia Padilla Carrasco (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-padilla-carrasco
+
+54. Walfred y René (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=walfred-rene
+
+55. Kevin y Zazil (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=kevin-zazil
+
+========================================
+TOTAL: 55 invitados - 119 boletos
+========================================
+
+NOTA: Reemplaza "tu-sitio.com" con tu dominio real cuando publiques la página.
+
+Para probar localmente usa:
+http://localhost:5173/?invitado=familia-desentis-giraldo

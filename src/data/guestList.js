@@ -1,0 +1,69 @@
+// Lista de invitados con sus boletos asignados
+export const guestList = {
+  'familia-desentis-giraldo': { name: 'Familia Desentis Giraldo', tickets: 2 },
+  'montse-ariel': { name: 'Montse y Ariel', tickets: 2 },
+  'familia-garcia-lim': { name: 'Familia García Lim', tickets: 2 },
+  'familia-desentis-mulia': { name: 'Familia Desentis Mulia', tickets: 2 },
+  'familia-santamaria-desentis': { name: 'Familia Santamaría Desentis', tickets: 2 },
+  'familia-sanchez-peralta': { name: 'Familia Sánchez Peralta', tickets: 2 },
+  'familia-merino-zuckerman': { name: 'Familia Merino Zuckerman', tickets: 2 },
+  'familia-calvo-zuckerman': { name: 'Familia Calvo Zuckerman', tickets: 2 },
+  'familia-castellanos-zuckerman': { name: 'Familia Castellanos Zuckerman', tickets: 2 },
+  'familia-zuckerman-lazo': { name: 'Familia Zuckerman Lazo', tickets: 3 },
+  'tania-calvo-zuckerman': { name: 'Tania Calvo Zuckerman', tickets: 1 },
+  'familia-caso-calvo': { name: 'Familia Caso Calvo', tickets: 2 },
+  'familia-zuckerman-hoyuela': { name: 'Familia Zuckerman Hoyuela', tickets: 2 },
+  'familia-rodriguez-diosdado': { name: 'Familia Rodríguez Diosdado', tickets: 2 },
+  'familia-rodriguez-alvarez': { name: 'Familia Rodríguez Álvarez', tickets: 2 },
+  'diego-mariana': { name: 'Diego y Mariana', tickets: 2 },
+  'familia-rodriguez-uribe': { name: 'Familia Rodríguez Uribe', tickets: 2 },
+  'familia-rullan': { name: 'Familia Rullán', tickets: 2 },
+  'familia-vera': { name: 'Familia Vera', tickets: 2 },
+  'familia-martorell': { name: 'Familia Martorell', tickets: 2 },
+  'jorge-escalona': { name: 'Jorge Escalona', tickets: 2 },
+  'familia-ambrosi': { name: 'Familia Ambrosi', tickets: 2 },
+  'carina-quiroz': { name: 'Carina Quiroz', tickets: 1 },
+  'diego-guido': { name: 'Diego Guido', tickets: 1 },
+  'everardo-jimena': { name: 'Everardo y Jimena', tickets: 2 },
+  'jorge-ela': { name: 'Jorge y Ela', tickets: 2 },
+  'max-fernanda': { name: 'Max y Fernanda', tickets: 2 },
+  'kevin-melissa': { name: 'Kevin y Melissa', tickets: 2 },
+  'pablo-maldujano': { name: 'Pablo Maldujano', tickets: 1 },
+  'angeles-alonso': { name: 'Ángeles Alonso', tickets: 1 },
+  'manuel-giraldo': { name: 'Manuel Giraldo', tickets: 1 },
+  'majo-tiago': { name: 'Majo y Tiago', tickets: 2 },
+  'familia-villasenor': { name: 'Familia Villaseñor', tickets: 4 },
+  'familia-cahue': { name: 'Familia Cahue', tickets: 4 },
+  'alexia-ruben': { name: 'Alexia y Rubén', tickets: 2 },
+  'familia-gonzalez-alvarez': { name: 'Familia González Álvarez', tickets: 2 },
+  'familia-arce-gonzalez': { name: 'Familia Arce González', tickets: 2 },
+  'familia-aguilar-macias': { name: 'Familia Aguilar Macías', tickets: 2 },
+  'familia-galindo-menendez': { name: 'Familia Galindo Menéndez', tickets: 2 },
+  'familia-vazquez-olivera': { name: 'Familia Vázquez Olivera', tickets: 2 },
+  'familia-munoz-campillo': { name: 'Familia Muñoz Campillo', tickets: 2 },
+  'familia-hernandez': { name: 'Familia Hernández', tickets: 2 },
+  'familia-hurtado': { name: 'Familia Hurtado', tickets: 2 },
+  'familia-ventura': { name: 'Familia Ventura', tickets: 2 },
+  'familia-villeda-mena-brito': { name: 'Familia Villeda Mena Brito', tickets: 2 },
+  'francisco-beatriz': { name: 'Francisco y Beatriz', tickets: 2 },
+  'familia-campos-zuckerman': { name: 'Familia Campos Zuckerman', tickets: 2 },
+  'mariana-humberto': { name: 'Mariana y Humberto', tickets: 2 },
+  'jocelyn-zuckerman': { name: 'Jocelyn Zuckerman', tickets: 1 },
+  'familia-mercadillo-reyes': { name: 'Familia Mercadillo Reyes', tickets: 2 },
+  'ericka-lara': { name: 'Ericka Lara', tickets: 1 },
+  'familia-moreno-villareal': { name: 'Familia Moreno Villareal', tickets: 5 },
+  'familia-padilla-carrasco': { name: 'Familia Padilla Carrasco', tickets: 2 },
+  'walfred-rene': { name: 'Walfred y René', tickets: 2 },
+  'kevin-zazil': { name: 'Kevin y Zazil', tickets: 2 },
+}
+
+// Función para obtener datos del invitado por código
+export const getGuestByCode = (code) => {
+  return guestList[code] || null
+}
+
+// Función para obtener el código desde la URL
+export const getGuestCodeFromURL = () => {
+  const params = new URLSearchParams(window.location.search)
+  return params.get('invitado') || params.get('guest')
+}
