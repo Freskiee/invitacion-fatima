@@ -183,11 +183,11 @@ const InvitationContent = () => {
 
               {/* Tarjeta RSVP */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, duration: 1 }}
                 viewport={{ once: true }}
-                className="relative mx-auto w-64 h-64 mt-8"
+                className="relative mx-auto w-72 h-72 md:w-80 md:h-80 mt-8"
               >
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-full shadow-lg flex items-center justify-center"
@@ -196,13 +196,13 @@ const InvitationContent = () => {
                     border: '1px solid rgba(0,0,0,0.05)'
                   }}
                 >
-                  <div className="text-center px-6 flex flex-col justify-center h-full">
+                  <div className="text-center px-8 flex flex-col justify-center items-center h-full max-w-[85%]">
                     {guestData && (
-                      <h3 className="font-serif text-base md:text-lg text-sage mb-2 line-clamp-2">
+                      <h3 className="font-serif text-sm md:text-base text-sage mb-2 leading-tight max-w-full break-words">
                         {guestData.name}
                       </h3>
                     )}
-                    <p className="text-xs tracking-wide text-gray-600 leading-relaxed">
+                    <p className="text-[10px] md:text-xs tracking-wide text-gray-600 leading-relaxed mt-1">
                       CON MUCHO<br />
                       CARIÑO HEMOS<br />
                       RESERVADO {guestData ? guestData.tickets : 'UN'}<br />
