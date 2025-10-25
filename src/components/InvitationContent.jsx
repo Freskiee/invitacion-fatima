@@ -195,13 +195,13 @@ const InvitationContent = () => {
                     border: '1px solid rgba(0,0,0,0.05)'
                   }}
                 >
-                  <div className="text-center px-8">
+                  <div className="text-center px-6 flex flex-col justify-center h-full">
                     {guestData && (
-                      <h3 className="font-serif text-lg md:text-xl text-sage mb-3">
+                      <h3 className="font-serif text-base md:text-lg text-sage mb-2 line-clamp-2">
                         {guestData.name}
                       </h3>
                     )}
-                    <p className="text-xs tracking-wide text-gray-600 leading-relaxed mb-4">
+                    <p className="text-xs tracking-wide text-gray-600 leading-relaxed">
                       CON MUCHO<br />
                       CARIÑO HEMOS<br />
                       RESERVADO {guestData ? guestData.tickets : 'UN'}<br />
