@@ -120,11 +120,11 @@ const InvitationContent = () => {
               >
                 <div className="relative mx-auto w-full max-w-md">
                   <div className="bg-sage p-6 relative" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)' }}>
-                    <div className="text-center py-4 flex justify-center">
+                    <div className="text-center py-6 flex justify-center">
                       <img 
                         src="/images/letras.png" 
                         alt="FH" 
-                        className="w-20 h-20 object-contain"
+                        className="w-32 h-32 md:w-36 md:h-36 object-contain"
                         style={{
                           filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
                         }}
