@@ -55,6 +55,7 @@ export const guestList = {
   'familia-padilla-carrasco': { name: 'Familia Padilla Carrasco', tickets: 2 },
   'walfred-rene': { name: 'Walfred y René', tickets: 2 },
   'kevin-zazil': { name: 'Kevin y Zazil', tickets: 2 },
+  'familia-hellstern-sosa': { name: 'Familia Hellstern Sosa', tickets: 4 },
 }
 
 // Función para obtener datos del invitado por código

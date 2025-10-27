@@ -168,7 +168,10 @@ Copia y pega estas URLs para enviar a cada invitado:
 55. Kevin y Zazil (2 boletos)
     https://fatima-hector.netlify.app/?invitado=kevin-zazil
 
+56. Familia Hellstern Sosa (4 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-hellstern-sosa
+
 ========================================
-TOTAL: 55 invitados - 119 boletos
+TOTAL: 56 invitados - 123 boletos
 ========================================
 
