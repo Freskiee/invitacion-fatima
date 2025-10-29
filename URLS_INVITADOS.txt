@@ -171,7 +171,25 @@ Copia y pega estas URLs para enviar a cada invitado:
 56. Familia Hellstern Sosa (4 boletos)
     https://fatima-hector.netlify.app/?invitado=familia-hellstern-sosa
 
+57. Lucero Anel (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=lucero-anel
+
+58. Elizabeth y Mathew (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=elizabeth-mathew
+
+59. Alexa Martinez (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=alexa-martinez
+
+60. Saul Martinez (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=saul-martinez
+
+61. Familia Alatorre (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-alatorre
+
+62. Roberto Valdez (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=roberto-valdez
+
 ========================================
-TOTAL: 56 invitados - 123 boletos
+TOTAL: 62 invitados - 132 boletos
 ========================================
 
