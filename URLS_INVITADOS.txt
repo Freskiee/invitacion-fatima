@@ -189,7 +189,15 @@ Copia y pega estas URLs para enviar a cada invitado:
 62. Roberto Valdez (2 boletos)
     https://fatima-hector.netlify.app/?invitado=roberto-valdez
 
-========================================
-TOTAL: 62 invitados - 132 boletos
-========================================
+63. Familia Ramírez Rosette (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-ramirez-rosette
 
+64. René Montero (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=rene-montero
+
+65. Javier Moreno (1 boleto)
+    https://fatima-hector.netlify.app/?invitado=javier-moreno
+
+========================================
+TOTAL: 65 invitados - 136 boletos
+========================================
