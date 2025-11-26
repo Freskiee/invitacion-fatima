@@ -198,6 +198,15 @@ Copia y pega estas URLs para enviar a cada invitado:
 65. Javier Moreno (1 boleto)
     https://fatima-hector.netlify.app/?invitado=javier-moreno
 
+66. Familia Castellazo Rozycka (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-castellazo-rozycka
+
+67. Familia Cortés Lara (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-cortes-lara
+
+68. Familia Limón Díaz (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-limon-diaz
+
 ========================================
-TOTAL: 65 invitados - 136 boletos
+TOTAL: 68 invitados - 142 boletos
 ========================================
