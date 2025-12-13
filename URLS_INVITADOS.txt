@@ -207,6 +207,9 @@ Copia y pega estas URLs para enviar a cada invitado:
 68. Familia Limón Díaz (2 boletos)
     https://fatima-hector.netlify.app/?invitado=familia-limon-diaz
 
+69. Familia Castillo (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-castillo
+
 ========================================
-TOTAL: 68 invitados - 142 boletos
+TOTAL: 69 invitados - 144 boletos
 ========================================
