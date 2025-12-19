@@ -210,6 +210,9 @@ Copia y pega estas URLs para enviar a cada invitado:
 69. Familia Castillo (2 boletos)
     https://fatima-hector.netlify.app/?invitado=familia-castillo
 
+70. Patricia Mijangos (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=patricia-mijangos
+
 ========================================
-TOTAL: 69 invitados - 144 boletos
+TOTAL: 70 invitados - 146 boletos
 ========================================
