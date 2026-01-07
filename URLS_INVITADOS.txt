@@ -213,6 +213,12 @@ Copia y pega estas URLs para enviar a cada invitado:
 70. Patricia Mijangos (2 boletos)
     https://fatima-hector.netlify.app/?invitado=patricia-mijangos
 
+71. Familia Flores Navarrete (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-flores-navarrete
+
+72. Familia Pombo Giraldo (2 boletos)
+    https://fatima-hector.netlify.app/?invitado=familia-pombo-giraldo
+
 ========================================
-TOTAL: 70 invitados - 146 boletos
+TOTAL: 72 invitados - 148 boletos
 ========================================
